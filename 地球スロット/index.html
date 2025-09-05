@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>地球スロット</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="title">地球スロット</div>
+    <div class="grid">
+      <section class="machine" aria-label="スロット本体">
+        <div class="hud">
+          <div class="chip"><small>今のエネルギー</small><span id="credit">100</span><small>J</small></div>
+          <div class="chip"><small>ベット</small>
+            <select id="bet">
+              <option value="0.1">0.1J</option>
+              <option value="0.2">0.2J</option>
+              <option value="0.5">0.5J</option>
+              <option value="1.0">1.0J</option>
+              <option value="2.0">2.0J</option>
+              <option value="5.0">5.0J</option>
+              <option value="10.0">10J</option>
+              <option value="20.0">20J</option>
+              <option value="50.0">50J</option>
+              <option value="100.0">100J</option>
+              <!-- <option value="all">ALL IN</option> -->
+            </select>
+          </div>
+          <div class="chip"><small>直近の結果</small><span id="last">—</span></div>
+        </div>
+
+        <div class="reels" role="group" aria-label="リール">
+          <div class="reel" id="reel0"><div class="cell" aria-hidden="true"><img src="imgs/earth.svg"  alt="地"></div></div>
+          <div class="reel" id="reel1"><div class="cell" aria-hidden="true"><img src="imgs/saturn.svg" alt="土"></div></div>
+          <div class="reel" id="reel2"><div class="cell" aria-hidden="true"><img src="imgs/mars.svg"   alt="火"></div></div>
+        </div>
+
+        <div class="controls">
+          <button id="spin">SPIN</button>
+          <button id="reset" class="btn-secondary" title="クレジットを100に戻す">RESET</button>
+        </div>
+        <div id="msg" class="msg" aria-live="polite">ベットを選んでSPIN</div>
+      </section>
+
+      <aside class="side">
+        <h3>ペイテーブル（3つ揃い）</h3>
+        <div class="ptable" aria-label="ペイテーブル">
+          <div><img src="imgs/sun.svg"     alt="日"></div><div>ベット x </div><div>50</div>
+          <div><img src="imgs/mercury.svg" alt="水"></div><div>ベット x </div><div>25</div>
+          <div><img src="imgs/venus.svg"   alt="金"></div><div>ベット x </div><div>15</div>
+          <div><img src="imgs/earth.svg"   alt="地"></div><div>ベット x </div><div>12</div>
+          <div><img src="imgs/moon.svg"    alt="月"></div><div>ベット x </div><div>10</div>
+          <div><img src="imgs/mars.svg"    alt="火"></div><div>ベット x </div><div>8</div>
+          <div><img src="imgs/jupiter.svg" alt="木"></div><div>ベット x </div><div>6</div>
+          <div><img src="imgs/saturn.svg"  alt="土"></div><div>ベット x </div><div>5</div>
+        </div>
+        <div class="legend">2つ揃いは5分の1</div>
+        <div class="legend">月が1つでも出たら x1.5以上</div>
+        <div class="legend">レア役ほど出にくい重み付け抽選 そのため目押し非対応</div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="./scripts/main.js"></script>
+</body>
+</html>
